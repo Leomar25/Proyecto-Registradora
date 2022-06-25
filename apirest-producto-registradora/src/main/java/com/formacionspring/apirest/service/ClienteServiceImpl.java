@@ -4,37 +4,37 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.formacionspring.apirest.entity.Producto;
+
+import com.formacionspring.apirest.entity.Cliente;
 import com.formacionspring.apirest.entity.Venta;
-import com.formacionspring.apirest.repository.ProductoDao;
+import com.formacionspring.apirest.repository.ClienteDao;
 
 @Service
-public class ProductoServiceImpl implements ProductoService{
-
-	@Autowired
-	private ProductoDao productoDao;
+public class ClienteServiceImpl implements ClienteService{
+	
+	@Autowired 
+	private ClienteDao clienteDao;
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Producto> mostrarTodos() {
-		return (List<Producto>) productoDao.findAll();
+	public List<Cliente> mostrarTodos() {
+		return (List<Cliente>) clienteDao.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Producto mostrarPorId(Long id) {
-		return productoDao.findById(id).orElse(null);
+	public Cliente mostrarPorId(Long id) {
+		return clienteDao.findById(id).orElse(null);
 	}
 
 	@Override
-	public Producto guardar(Producto producto) {
-		return productoDao.save(producto);
+	public Cliente guardar(Cliente cliente) {
+		return clienteDao.save(cliente);
 	}
 
 	@Override
 	public void borrar(Long id) {
-		productoDao.deleteById(id);;
-		
+		clienteDao.deleteById(id);
 	}
 
 	@Override
@@ -50,11 +50,6 @@ public class ProductoServiceImpl implements ProductoService{
 	
 	
 	
-	
-	
-	
-	
+
 
 }
-
-

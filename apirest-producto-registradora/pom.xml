@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.formacionspring.apirest</groupId>
-	<artifactId>apirest-producto-registradora</artifactId>
+	<artifactId>apirest-cliente</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>apirest-producto-registradora</name>
+	<name>apirest-cliente</name>
 	<description>Iluminacion de mentes3</description>
 	<properties>
 		<java.version>17</java.version>
@@ -42,7 +42,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.9</version>
+        </dependency>
+        
+        <dependency>
+		    <groupId>io.github.classgraph</groupId>
+		    <artifactId>classgraph</artifactId>
+		    <version>4.8.147</version>
+		</dependency>
 	</dependencies>
+	
+		 
 
 	<build>
 		<plugins>
