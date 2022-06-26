@@ -188,7 +188,7 @@ public class ProductoRestController {
 
     }
 	//METODO PARA SUBIR IMAGENES//
-	@PostMapping("/productos/uploads")
+	@PostMapping("/productos/Uploads")
     public ResponseEntity<?> upload(@RequestParam("archivo") MultipartFile archivo,
             @RequestParam("id") Long id){
 
@@ -203,7 +203,7 @@ public class ProductoRestController {
 
             //Guardamos la ruta completa uploads/nombredelaimagen lo guardamos en una variable de tipo path que es de java.io//
 
-            Path rutaArchivo = Paths.get("uploads").resolve(nombreArchivo).toAbsolutePath();
+            Path rutaArchivo = Paths.get("Uploads").resolve(nombreArchivo).toAbsolutePath();
 
             try {
                 //Copiamos el archivo fisico a la ruta que definimos en Path//
@@ -218,7 +218,7 @@ public class ProductoRestController {
             //verificamos que el cliente tenga registrado una imagen
             if(nombreFotoAnterior != null && nombreFotoAnterior.length()>0) {
                 //preparamos la ruta a la imagen guardada
-                Path rutaFotoAnterior = Paths.get("uploads").resolve(nombreFotoAnterior).toAbsolutePath();
+                Path rutaFotoAnterior = Paths.get("Uploads").resolve(nombreFotoAnterior).toAbsolutePath();
                 File archivoFotoAnterior = rutaFotoAnterior.toFile();
                 //verificamos que el archivo existe y se pueda leer
                 if(archivoFotoAnterior.exists() && archivoFotoAnterior.canRead()) {
@@ -242,10 +242,10 @@ public class ProductoRestController {
     }
 	
 	//2do METODO PARA SUBIR IMAGENES//
-	@GetMapping("/uploads/img/{nombreImagen:.+}")
+	@GetMapping("/Uploads/img/{nombreImagen:.+}")
 	public ResponseEntity<Resource> verImagen(@PathVariable String nombreImagen){
 	
-		Path rutaArchivo = Paths.get("uploads").resolve(nombreImagen).toAbsolutePath();
+		Path rutaArchivo = Paths.get("Uploads").resolve(nombreImagen).toAbsolutePath();
 		
 		Resource recurso = null;
 		

@@ -37,10 +37,10 @@ public class Venta implements Serializable {
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Cliente cliente;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	/*@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_proveedor")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	private Proveedor proveedor;
+	private Proveedor proveedor; */
 	
 	
 
@@ -86,8 +86,18 @@ public class Venta implements Serializable {
 	}
 
 
-	
-	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+
+
+
 
 
 

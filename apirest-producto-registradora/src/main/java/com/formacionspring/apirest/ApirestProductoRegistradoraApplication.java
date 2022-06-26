@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
-@OpenAPIDefinition(info =@Info(title ="Api Productos",version="1.0",description ="Crud completo api restful"))
+@OpenAPIDefinition(info =@Info(title ="Api-Registradora",version="1.0",description ="Crud completo api restfull"))
 public class ApirestProductoRegistradoraApplication {
 
 	public static void main(String[] args) {
